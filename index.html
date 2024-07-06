@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>錸潔 LAIJIE Home Cleaning</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            margin-right: 400px;
+        }
+
+        .navbar img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 0;
+            border-radius: 5px;
+            list-style-type: none;
+            margin: 0;
+            min-width: 100%;
+        }
+
+        .navbar ul li:hover ul {
+            display: block;
+            width: 80%;
+        }
+
+        .navbar ul li ul li {
+            width: 100%;
+            transform: translateX(-20px);
+        }
+
+        .navbar ul li ul li a {
+            height: auto;
+            padding: 10px;
+            white-space: nowrap;
+            display: block;
+            background-color: transparent;
+        }
+
+        .navbar ul li ul li a:hover {
+            background-color: #575757;
+        }
+
+        .hero {
+            background-image: url('./media/background2.png');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 32px;
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .content p,
+        .content ul {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .content ul {
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #777;
+            padding: 3px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="./media/logo.jpg" alt="Logo">
+            <h1><a href="index.html">錸潔 LAIJIE Home Cleaning</a></h1>
+        </div>
+
+        <div class="navbar-list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="services.html">服務內容</a>
+                    <ul>
+                        <li><a href="faq.html">常見問題</a></li>
+                    </ul>
+                </li>
+                <li><a href="partners.html">誠徵夥伴</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>潔淨空間，錸潔承諾</h2>
+    </div>
+
+    <div class="content">
+        <h2>品牌願景</h2>
+        <p>成為最值得信賴的清潔服務品牌，通過真誠、用心和務實的服務，為每一位客戶創造潔淨、舒適的環境。</p>
+
+        <h2>品牌使命</h2>
+        <p>提供可靠的清潔服務，以誠實守信的態度贏得客戶的信任。認真對待每一個清潔任務，力求完美，超越客戶的期望。保持實在的作風，提供高品質但價格合理的服務。善待我們的員工，營造積極、友好的工作環境，激勵他們為客戶提供卓越服務。
+        </p>
+
+        <h2>核心價值觀</h2>
+        <ul>
+            <li><strong>誠信：</strong>以誠實守信的態度對待每一位客戶，保證服務質量和客戶權益。</li>
+            <li><strong>認真：</strong>專注細節，認真完成每一次清潔任務，確保客戶滿意。</li>
+            <li><strong>實在：</strong>提供高質量且性價比高的清潔服務，真正為客戶著想。</li>
+            <li><strong>善待人員：</strong>尊重和關愛員工，提供良好的工作環境和發展機會，激發他們的潛力和責任感。</li>
+        </ul>
+        <h2>服務承諾</h2>
+        <ul>
+            <strong>
+                <li>快速回應：
+            </strong>及時回應客戶需求，快速提供解決方案。</li>
+            <strong>
+                <li>高效服務：
+            </strong>以高效的清潔流程和專業的服務態度，確保每次服務都能達到最佳效果。</li>
+            <strong>
+                <li>透明價格：
+            </strong>明碼實價，無隱藏費用，保證客戶權益。</li>
+            <strong>
+                <li>員工關懷：
+            </strong>重視員工福利和職業發展，為他們提供支持和培訓，確保服務質量和員工滿意度。</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

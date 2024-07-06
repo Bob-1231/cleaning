@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>錸潔 LAIJIE Home Cleaning</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            margin-right: 400px;
+        }
+
+        .navbar img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 0;
+            border-radius: 5px;
+            list-style-type: none;
+            margin: 0;
+            min-width: 100%;
+        }
+
+        .navbar ul li:hover ul {
+            display: block;
+            width: 80%;
+        }
+
+        .navbar ul li ul li {
+            width: 100%;
+            transform: translateX(-20px);
+        }
+
+        .navbar ul li ul li a {
+            height: auto;
+            padding: 10px;
+            white-space: nowrap;
+            display: block;
+            background-color: transparent;
+        }
+
+        .navbar ul li ul li a:hover {
+            background-color: #575757;
+        }
+
+        .hero {
+            background-image: url('./media/service_background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 32px;
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .service-item {
+            position: relative;
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            opacity: 0.7;
+        }
+
+        .service-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            border-radius: 8px;
+            opacity: 0.7;
+        }
+
+        .service-item h4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+            z-index: 1;
+        }
+
+
+        footer {
+            background-color: #777;
+            padding: 3px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="./media/logo.jpg" alt="Logo">
+            <h1><a href="index.html">錸潔 LAIJIE Home Cleaning</a></h1>
+        </div>
+
+        <div class="navbar-list">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="services.html">服務內容</a>
+                    <ul>
+                        <li><a href="faq.html">常見問題</a></li>
+                    </ul>
+                </li>
+                <li><a href="partners.html">誠徵夥伴</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>服務內容</h2>
+    </div>
+
+    <div class="content">
+        <h2>我們提供的服務</h2>
+
+        <div class="services">
+            <div class="service-item">
+                <img src="./media/home_cleaning.jpg" alt="環境清潔">
+                <h4>環境清潔</h4>
+            </div>
+
+            <div class="service-item">
+                <img src="./media/renovation_cleaning.jpg" alt="裝潢細清">
+                <h4>裝潢細清</h4>
+            </div>
+
+            <div class="service-item">
+                <img src="./media/appliance_cleaning.jpg" alt="電器清潔">
+                <h4>電器清潔</h4>
+            </div>
+
+            <div class="service-item">
+                <img src="./media/garbage_disposal.png" alt="傾倒垃圾">
+                <h4>傾倒垃圾</h4>
+            </div>
+
+            <div class="service-item">
+                <img src="./media/storage.jpg" alt="整理收納">
+                <h4>整理收納</h4>
+            </div>
+
+            <div class="service-item">
+                <img src="./media/furniture_cleaning.jpg" alt="傢俱清潔">
+                <h4>傢俱清潔</h4>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
