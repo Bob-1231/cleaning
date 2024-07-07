@@ -163,15 +163,6 @@
             justify-content: space-between;
         }
 
-        /*.service-item {
-            position: relative;
-            flex: 1 1 calc(50% - 20px);
-            margin: 10px;
-            text-align: center;
-            color: #fff;
-            cursor: pointer;
-        }*/
-
         .service-item {
             position: relative;
             flex: 1 1 calc(50% - 20px);
@@ -223,15 +214,13 @@
             width: 100%;
             height: 0;
             overflow: hidden;
-            transition: height 0.5s ease;
+            transition: height 0.4s ease;
             max-height: 1000px;
-            /* 增加最大高度以確保足夠空間 */
         }
 
         .iframe-container iframe {
             width: 100%;
             height: 100%;
-            /* 確保 iframe 高度填滿容器 */
             border: none;
         }
 
@@ -330,11 +319,13 @@
                         activeItem = null;
                     } else {
                         iframe.src = item.getAttribute('data-src');
-                        iframeContainer.style.height = '600px'; // 調整高度為 600px
+                        iframeContainer.style.height = '600px';
                         activeItem = item;
 
-                        // 滾動到 iframe 區塊
-                        iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                        // 延遲滾動到 iframe 區塊
+                        setTimeout(() => {
+                            iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                        }, 100); // 延遲時間
                     }
                 });
             });
@@ -345,7 +336,6 @@
                 }
             });
         });
-
 
     </script>
 </body>
