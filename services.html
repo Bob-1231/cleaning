@@ -163,6 +163,15 @@
             justify-content: space-between;
         }
 
+        /*.service-item {
+            position: relative;
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }*/
+
         .service-item {
             position: relative;
             flex: 1 1 calc(50% - 20px);
@@ -170,6 +179,13 @@
             text-align: center;
             color: #fff;
             cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to bottom, rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5));
         }
 
         .service-item img {
@@ -316,6 +332,9 @@
                         iframe.src = item.getAttribute('data-src');
                         iframeContainer.style.height = '600px'; // 調整高度為 600px
                         activeItem = item;
+
+                        // 滾動到 iframe 區塊
+                        iframeContainer.scrollIntoView({ behavior: 'smooth' });
                     }
                 });
             });
@@ -326,6 +345,7 @@
                 }
             });
         });
+
 
     </script>
 </body>
