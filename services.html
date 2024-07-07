@@ -169,6 +169,7 @@
             margin: 10px;
             text-align: center;
             color: #fff;
+            cursor: pointer;
         }
 
         .service-item img {
@@ -200,6 +201,22 @@
             font-size: 24px;
             color: #fff;
             z-index: 1;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.5s ease;
+            max-height: 1000px;
+            /* 增加最大高度以確保足夠空間 */
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            /* 確保 iframe 高度填滿容器 */
+            border: none;
         }
 
 
@@ -243,41 +260,74 @@
         <h2>我們提供的服務</h2>
 
         <div class="services">
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/environment_cleaning.html">
                 <img src="./media/home_cleaning.jpg" alt="環境清潔">
                 <h4>環境清潔</h4>
             </div>
 
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/renovation_cleaning.html">
                 <img src="./media/renovation_cleaning.jpg" alt="裝潢細清">
                 <h4>裝潢細清</h4>
             </div>
 
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/appliance_cleaning.html">
                 <img src="./media/appliance_cleaning.jpg" alt="電器清潔">
                 <h4>電器清潔</h4>
             </div>
 
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/garbage_disposal.html">
                 <img src="./media/garbage_disposal.png" alt="傾倒垃圾">
                 <h4>傾倒垃圾</h4>
             </div>
 
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/storage.html">
                 <img src="./media/storage.jpg" alt="整理收納">
                 <h4>整理收納</h4>
             </div>
 
-            <div class="service-item">
+            <div class="service-item" data-src="./iframe/furniture_cleaning.html">
                 <img src="./media/furniture_cleaning.jpg" alt="傢俱清潔">
                 <h4>傢俱清潔</h4>
             </div>
+        </div>
+
+        <div class="iframe-container">
+            <iframe src="" frameborder="0"></iframe>
         </div>
     </div>
 
     <footer>
         <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceItems = document.querySelectorAll('.service-item');
+            const iframeContainer = document.querySelector('.iframe-container');
+            const iframe = iframeContainer.querySelector('iframe');
+            let activeItem = null;
+
+            serviceItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (activeItem === item) {
+                        iframeContainer.style.height = '0';
+                        activeItem = null;
+                    } else {
+                        iframe.src = item.getAttribute('data-src');
+                        iframeContainer.style.height = '600px'; // 調整高度為 600px
+                        activeItem = item;
+                    }
+                });
+            });
+
+            iframeContainer.addEventListener('transitionend', () => {
+                if (iframeContainer.style.height === '0px') {
+                    iframe.src = '';
+                }
+            });
+        });
+
+    </script>
 </body>
 
 </html>
