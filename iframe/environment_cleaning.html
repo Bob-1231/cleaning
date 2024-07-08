@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,19 +24,73 @@
             font-size: 28px;
             color: #333;
             margin-top: 0;
+            text-align: center;
         }
 
         .content p {
             font-size: 16px;
             line-height: 1.6;
         }
+
+        .service-section {
+            margin-top: 40px;
+        }
+
+        .service-section h3 {
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: rgb(186, 255, 186);
+            text-align: center;
+        }
+
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            background-color: #e9e9f0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .service-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            flex: 1 1 calc(33.33% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+            text-align: center;
+        }
+
     </style>
 </head>
+
 <body>
+    
     <div class="content">
-        <h2>環境清潔 - 詳細內容</h2>
-        <p>這裡是環境清潔的詳細內容...</p>
-        <!-- Add more detailed content here -->
+        <h2>環境清潔服務內容</h2>
+        <div class="service-section">
+            <h3>居家清潔</h3>
+            <div class="service-container">
+                <div class="service-item">客廳清潔</div>
+                <div class="service-item">臥室清潔</div>
+                <div class="service-item">浴室清潔</div>
+                <div class="service-item">廚房清潔</div>
+                <div class="service-item">陽台清潔</div>
+                <div class="service-item">車庫清潔</div>
+            </div>
+        </div>
     </div>
+
 </body>
+
 </html>
