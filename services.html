@@ -236,27 +236,19 @@
             padding: 20px;
             border: 1px solid #888;
             width: 90%;
-            /* 增加寬度 */
             height: 90%;
-            /* 增加高度 */
             max-width: 1000px;
-            /* 最大寬度 */
             max-height: 700px;
-            /* 最大高度 */
             border-radius: 8px;
             position: relative;
             overflow: hidden;
-            /* 隱藏超出部分 */
         }
 
         .modal-content iframe {
             width: 100%;
             height: 100%;
-            /* 調整 iframe 的高度以適應 modal-content 的新高度 */
             overflow: auto;
-            /* 允許 iframe 內部滾動 */
             border: none;
-            /* 移除 iframe 邊框 */
         }
 
         .close {
@@ -296,8 +288,8 @@
                 <li>
                     <a href="services.html">服務內容</a>
                     <ul>
-                        <li><a href="./services_bar/price.html">價格表</a></li>
-                        <li><a href="./services_bar/faq.html">常見問題</a></li>
+                        <li><a href="./services/price.html">價格表</a></li>
+                        <li><a href="./services/faq.html">常見問題</a></li>
                     </ul>
                 </li>
                 <li><a href="partners.html">誠徵夥伴</a></li>
@@ -383,21 +375,21 @@
             const src = item.getAttribute('data-src');
             modalContent.src = src;
             modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // 隱藏主畫面的滾動條
+            document.body.style.overflow = 'hidden';
         });
     });
 
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
         modalContent.src = '';
-        document.body.style.overflow = 'auto'; // 恢復主畫面的滾動條
+        document.body.style.overflow = 'auto';
     });
 
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
             modalContent.src = '';
-            document.body.style.overflow = 'auto'; // 恢復主畫面的滾動條
+            document.body.style.overflow = 'auto';
         }
     });
 });
