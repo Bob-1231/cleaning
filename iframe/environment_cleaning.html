@@ -63,7 +63,7 @@
         }
 
         .service-item {
-            padding: 10px;
+            padding: 5px;
             border: 1px solid #ccc;
             flex: 1 1 calc(33.33% - 20px);
             box-sizing: border-box;
@@ -71,23 +71,77 @@
             text-align: center;
         }
 
+        .service-item img {
+            width: 100%;
+            height: auto;
+            max-width: auto;
+            /* 可以根據需要調整圖片最大寬度 */
+            margin-bottom: 10px;
+        }
+
+        .service-item h4 {
+            margin: 10px 0 5px;
+        }
+
+        .service-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
     </style>
 </head>
 
 <body>
-    
+
     <div class="content">
-        <h2>環境清潔服務內容</h2>
+        <h2>環境清潔項目</h2>
         <div class="service-section">
             <h3>居家清潔</h3>
+
             <div class="service-container">
-                <div class="service-item">客廳清潔</div>
-                <div class="service-item">臥室清潔</div>
-                <div class="service-item">浴室清潔</div>
-                <div class="service-item">廚房清潔</div>
-                <div class="service-item">陽台清潔</div>
-                <div class="service-item">車庫清潔</div>
+                <div class="service-container">
+
+                    <div class="service-item">
+                        <img src="../media/livingroom.jpg" alt="客廳清潔">
+                        <h4>客廳清潔</h4>
+                        <p>我們提供專業的客廳清潔服務，確保您的客廳一塵不染。</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/bedroom.jpg" alt="臥室清潔">
+                        <h4>臥室清潔</h4>
+                        <p>臥室清潔服務讓您的臥室環境更舒適、整潔。</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/bathroom.jpg" alt="浴室清潔">
+                        <h4>浴室清潔</h4>
+                        <p>我們的浴室清潔服務確保您的浴室清爽乾淨。</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <img src="../media/kitchen.jpg" alt="廚房清潔">
+                        <h4>廚房清潔</h4>
+                        <p>清潔內容</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/balcony.jpg" alt="陽台清潔">
+                        <h4>陽台清潔</h4>
+                        <p>清潔內容</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/garage.jpg" alt="車庫清潔">
+                        <h4>車庫清潔</h4>
+                        <p>清潔內容</p>
+                    </div>
+
+                </div>
             </div>
+
+            <h3>辦公室清潔</h3>
+            
         </div>
     </div>
 
