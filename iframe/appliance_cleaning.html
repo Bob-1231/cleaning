@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
         body {
             margin: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -23,19 +24,102 @@
             font-size: 28px;
             color: #333;
             margin-top: 0;
+            text-align: center;
         }
 
         .content p {
             font-size: 16px;
             line-height: 1.6;
         }
+
+        .service-section {
+            margin-top: 40px;
+        }
+
+        .service-section h3 {
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: rgb(186, 255, 186);
+            text-align: center;
+        }
+
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            background-color: #e9e9f0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .service-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .service-item {
+            padding: 5px;
+            border: 1px solid #ccc;
+            flex: 1 1 calc(33.33% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            max-width: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .service-item h4 {
+            margin: 10px 0 5px;
+        }
+
+        .service-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+
     </style>
 </head>
 <body>
     <div class="content">
-        <h2>電器清潔 - 詳細內容</h2>
-        <p>這裡是電器清潔的詳細內容...</p>
-        <!-- Add more detailed content here -->
+        <h2>清潔項目</h2>
+        <div class="service-section">
+            <h3>電器清潔</h3>
+
+            <div class="service-container">
+                <div class="service-container">
+
+                    <div class="service-item">
+                        <img src="../media/livingroom.jpg" alt="客廳清潔">
+                        <h4>冷氣清潔</h4>
+                        <p>我們提供專業的客廳清潔服務，確保您的客廳一塵不染。</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/bedroom.jpg" alt="臥室清潔">
+                        <h4>洗衣機清潔</h4>
+                        <p>臥室清潔服務讓您的臥室環境更舒適、整潔。</p>
+                    </div>
+
+                    <div class="service-item">
+                        <img src="../media/bathroom.jpg" alt="浴室清潔">
+                        <h4>冰箱清潔</h4>
+                        <p>我們的浴室清潔服務確保您的浴室清爽乾淨。</p>
+                    </div>
+
+                </div>
+            </div>
     </div>
 </body>
 </html>
