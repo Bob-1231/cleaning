@@ -81,12 +81,88 @@
 
         .service-item h4 {
             margin: 10px 0 5px;
+            position: relative;
+        }
+
+        .service-item h4::before,
+        .service-item h4::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 2px;
+            background-color: #333;
+        }
+
+        .service-item h4::before {
+            left: 0;
+        }
+
+        .service-item h4::after {
+            right: 0;
         }
 
         .service-item p {
             margin: 0;
             font-size: 14px;
             color: #666;
+        }
+
+        .service-item ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            list-style-type: none;
+            text-align: left;
+        }
+
+        .service-item ul li {
+            flex: 0 0 calc(50% - 10px);
+            margin: 5px;
+        }
+
+        .btn-animate {
+            position: relative;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            border-radius: 5px;
+            background: #027efb;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-animate__sweep-left {
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                z-index: -1;
+                border-radius: 5px;
+                background-color: #90cf5b;
+                transition: .3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-animate a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -104,40 +180,79 @@
                     <div class="service-item">
                         <img src="../media/livingroom.jpg" alt="客廳清潔">
                         <h4>客廳清潔</h4>
-                        <p>我們提供專業的客廳清潔服務，確保您的客廳一塵不染。</p>
+                        <ul>
+                            <li>● 出入口玄關</li>
+                            <li>● 地面清潔</li>
+                            <li>● 桌面清潔</li>
+                            <li>● 櫃子表面</li>
+                            <li>● 沙發表面</li>
+                            <li>● 家電外觀</li>
+                            <li>● 雜物整理</li>
+                        </ul>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/bedroom.jpg" alt="臥室清潔">
                         <h4>臥室清潔</h4>
-                        <p>臥室清潔服務讓您的臥室環境更舒適、整潔。</p>
+                        <ul>
+                            <li>● 地面清潔</li>
+                            <li>● 桌面清潔</li>
+                            <li>● 櫃子表面</li>
+                            <li>● 衣物整理</li>
+                            <li>● 雜物整理</li>
+                            <li>● 家電外觀</li>
+                        </ul>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/bathroom.jpg" alt="浴室清潔">
                         <h4>浴室清潔</h4>
-                        <p>我們的浴室清潔服務確保您的浴室清爽乾淨。</p>
+                        <ul>
+                            <li>● 洗手台清潔</li>
+                            <li>● 馬桶清潔</li>
+                            <li>● 浴缸清潔</li>
+                            <li>● 鏡子</li>
+                            <li>● 磁磚刷洗</li>
+                        </ul>
                     </div>
-                    
+
                     <div class="service-item">
                         <img src="../media/kitchen.jpg" alt="廚房清潔">
                         <h4>廚房清潔</h4>
-                        <p>清潔內容</p>
+                        <ul>
+                            <li>● 流理臺清潔</li>
+                            <li>● 瓦斯爐台</li>
+                            <li>● 櫥櫃清潔</li>
+                            <li>● 地板清潔</li>
+                            <li>● 抽油煙機外觀</li>
+                        </ul>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/balcony.jpg" alt="陽台清潔">
                         <h4>陽台清潔</h4>
-                        <p>清潔內容</p>
+                        <ul>
+                            <li>● 地板清潔</li>
+                            <li>● 雜物整理</li>
+                        </ul>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/garage.jpg" alt="車庫清潔">
                         <h4>車庫清潔</h4>
-                        <p>清潔內容</p>
+                        <ul>
+                            <li>● 地板清潔</li>
+                            <li>● 雜物整理</li>
+                            <li>● 電器外觀擦拭</li>
+                        </ul>
                     </div>
 
                 </div>
+
+                <div class="btn-animate btn-animate__sweep-left">
+                    <a href="../reservation/home_cleaning.html" target="_top">前往預約</a>
+                </div>
+
             </div>
 
             <h3>辦公室清潔</h3>
@@ -148,42 +263,41 @@
                     <div class="service-item">
                         <img src="../media/office.jpg" alt="工作區清潔">
                         <h4>工作區清潔</h4>
-                        <p>我們提供專業的客廳清潔服務，確保您的客廳一塵不染。</p>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/meeting_room.jpg" alt="會議室清潔">
                         <h4>會議室清潔</h4>
-                        <p>臥室清潔服務讓您的臥室環境更舒適、整潔。</p>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/toilet.jpg" alt="衛生間清潔">
                         <h4>衛生間清潔</h4>
-                        <p>我們的浴室清潔服務確保您的浴室清爽乾淨。</p>
                     </div>
-                    
+
                     <div class="service-item">
                         <img src="../media/waitingroom.jpg" alt="接待室清潔">
                         <h4>接待室清潔</h4>
-                        <p>清潔內容</p>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/pantry.jpg" alt="茶水間清潔">
                         <h4>茶水間清潔</h4>
-                        <p>清潔內容</p>
                     </div>
 
                     <div class="service-item">
                         <img src="../media/storageroom.jpg" alt="儲藏室清潔">
                         <h4>儲藏室清潔</h4>
-                        <p>清潔內容</p>
                     </div>
 
                 </div>
+
+                <div class="btn-animate btn-animate__sweep-left">
+                    <a href="../reservation/office_cleaning.html" target="_top">前往預約</a>
+                </div>
+
             </div>
-            
+
         </div>
     </div>
 
