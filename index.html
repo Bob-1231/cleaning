@@ -204,23 +204,51 @@
             padding: 40px;
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9fc;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease;
         }
 
         .content h2 {
-            font-size: 32px;
+            font-size: 36px;
             margin-top: 0;
-            color: #333;
+            color: #2c3e50;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: slideIn 0.6s ease;
         }
 
         .content p,
         .content ul {
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1.8;
-            color: #555;
+            color: #34495e;
+            transition: color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .content ul {
@@ -230,6 +258,57 @@
         .content li {
             margin-bottom: 10px;
         }
+
+        .values-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .value-box {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #7ce3fc;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .value-box h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+        }
+
+        .value-box p {
+            font-size: 16px;
+            color: #ffffff;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            margin: 0;
+            padding: 0;
+        }
+
+        .value-box:hover {
+            transform: translateY(-5px);
+            background-color: #1abc9c;
+        }
+
+        .value-box:hover h3 {
+            color: #fff;
+        }
+
+        .value-box:hover p {
+            opacity: 1;
+            max-height: 200px;
+        }
+
 
         footer {
             background-color: #777;
@@ -279,12 +358,37 @@
         </p>
 
         <h2>核心價值觀</h2>
-        <ul>
+        <div class="values-grid">
+
+            <div class="value-box" id="integrity">
+                <h3>誠信</h3>
+                <p>以誠實守信的態度對待每一位客戶，保證服務質量和客戶權益。</p>
+            </div>
+
+            <div class="value-box" id="seriousness">
+                <h3>認真</h3>
+                <p>專注細節，認真完成每一次清潔任務，確保客戶滿意。</p>
+            </div>
+
+            <div class="value-box" id="practicality">
+                <h3>實在</h3>
+                <p>提供高質量且性價比高的清潔服務，真正為客戶著想。</p>
+            </div>
+
+            <div class="value-box" id="care">
+                <h3>善待人員</h3>
+                <p>尊重和關愛員工，提供良好的工作環境和發展機會，激發他們的潛力和責任感。</p>
+            </div>
+
+        </div>
+
+        <!-- <ul>
             <li><strong>誠信：</strong>以誠實守信的態度對待每一位客戶，保證服務質量和客戶權益。</li>
             <li><strong>認真：</strong>專注細節，認真完成每一次清潔任務，確保客戶滿意。</li>
             <li><strong>實在：</strong>提供高質量且性價比高的清潔服務，真正為客戶著想。</li>
             <li><strong>善待人員：</strong>尊重和關愛員工，提供良好的工作環境和發展機會，激發他們的潛力和責任感。</li>
-        </ul>
+        </ul> -->
+
         <h2>服務承諾</h2>
         <ul>
             <strong>
