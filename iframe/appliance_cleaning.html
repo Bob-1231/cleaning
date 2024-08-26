@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
         body {
             margin: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -73,24 +73,37 @@
 
         .service-item img {
             width: 100%;
-            height: auto;
-            max-width: auto;
+            height: 200px;
+            object-fit: cover;
             margin-bottom: 10px;
             border-radius: 8px;
         }
 
         .service-item h4 {
             margin: 10px 0 5px;
+            position: relative;
         }
 
-        .service-item p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
+        .service-item h4::before,
+        .service-item h4::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 2px;
+            background-color: #333;
         }
 
+        .service-item h4::before {
+            left: 0;
+        }
+
+        .service-item h4::after {
+            right: 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="content">
         <h2>清潔項目</h2>
@@ -101,25 +114,23 @@
                 <div class="service-container">
 
                     <div class="service-item">
-                        <img src="../media/livingroom.jpg" alt="客廳清潔">
+                        <img src="../media/ac.jpg" alt="冷氣清潔">
                         <h4>冷氣清潔</h4>
-                        <p>我們提供專業的客廳清潔服務，確保您的客廳一塵不染。</p>
                     </div>
 
                     <div class="service-item">
-                        <img src="../media/bedroom.jpg" alt="臥室清潔">
+                        <img src="../media/washing_machine.jpg" alt="洗衣機清潔">
                         <h4>洗衣機清潔</h4>
-                        <p>臥室清潔服務讓您的臥室環境更舒適、整潔。</p>
                     </div>
 
                     <div class="service-item">
-                        <img src="../media/bathroom.jpg" alt="浴室清潔">
+                        <img src="../media/freezer.jpg" alt="冰箱清潔">
                         <h4>冰箱清潔</h4>
-                        <p>我們的浴室清潔服務確保您的浴室清爽乾淨。</p>
                     </div>
 
                 </div>
             </div>
-    </div>
+        </div>
 </body>
+
 </html>
