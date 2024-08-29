@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,19 +24,101 @@
             font-size: 28px;
             color: #333;
             margin-top: 0;
+            text-align: center;
         }
 
         .content p {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .service-section h3 {
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: rgb(186, 255, 186);
+            text-align: center;
+        }
+
+        .btn-animate {
+            position: relative;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            border-radius: 5px;
+            background: #027efb;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-animate__sweep-left {
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                z-index: -1;
+                border-radius: 5px;
+                background-color: #90cf5b;
+                transition: .3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-animate a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
+
 <body>
     <div class="content">
-        <h2>傾倒垃圾 - 詳細內容</h2>
-        <p>這裡是傾倒垃圾的詳細內容...</p>
-        <!-- Add more detailed content here -->
+        <h2>服務項目</h2>
+        <div class="service-section">
+            <h3>傾倒垃圾</h3>
+        </div>
+        <p>此項服務專為無法在垃圾車抵達的特定時間內進行垃圾傾倒的客戶設計。無論是因為工作繁忙、行程安排不便，或是其他原因，我們的專業團隊都能協助您在合適的時間將垃圾妥善處理，維護您生活環境的整潔。</p>
+
+        <h3>服務內容</h3>
+        <ul>
+            <li><strong>代為丟棄垃圾</strong>：您只需將垃圾妥善包裝好，我們的服務人員會在約定的時間前往指定地點，將垃圾丟入當地的垃圾車，解決您無法親自丟垃圾的煩惱。</li>
+            <li><strong>安心可靠的服務</strong>：專業的服務團隊，確保每次垃圾丟棄都符合當地的垃圾分類與處理規定。</li>
+            <li><strong>靈活高效</strong>：根據您的日程安排提供垃圾丟棄服務，不論是定期還是臨時需求，我們都能提供相應的服務。</li>
+        </ul>
+
+        <div class="btn-container" style="display: flex; justify-content: center; margin-top: 10px;">
+            <div class="btn-animate btn-animate__sweep-left" style="padding-left: 5px; padding-right: 5px;">
+                <a href="../contact.html" target="_top">聯絡我們進行洽詢</a>
+            </div>
+        </div>
+
     </div>
 </body>
+
 </html>
