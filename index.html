@@ -259,6 +259,97 @@
             margin-bottom: 10px;
         }
 
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 3px solid #1abc9c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .slideshow-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+
+        .mySlides {
+            display: none;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
         .values-grid {
             display: flex;
             justify-content: space-between;
@@ -310,7 +401,6 @@
             max-height: 200px;
         }
 
-
         footer {
             background-color: #777;
             padding: 3px;
@@ -350,11 +440,58 @@
 
 
     <div class="content">
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./media/before_after/1.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/2.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/3.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/4.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/5.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/6.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/7.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="./media/before_after/8.png" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div style="text-align:center; margin-top: 5px;">
+                <span class="dot" onmouseover="currentSlide(0)"></span>
+                <span class="dot" onmouseover="currentSlide(1)"></span>
+                <span class="dot" onmouseover="currentSlide(2)"></span>
+                <span class="dot" onmouseover="currentSlide(3)"></span>
+                <span class="dot" onmouseover="currentSlide(4)"></span>
+                <span class="dot" onmouseover="currentSlide(5)"></span>
+                <span class="dot" onmouseover="currentSlide(6)"></span>
+                <span class="dot" onmouseover="currentSlide(7)"></span>
+            </div>
+        </div>
+
+        <br>
+
+
+
         <h2>品牌願景</h2>
         <p>成為最值得信賴的清潔服務品牌，通過真誠、用心和務實的服務，為每一位客戶創造潔淨、舒適的環境。</p>
 
         <h2>品牌使命</h2>
-        <p>提供可靠的清潔服務，以誠實守信的態度贏得客戶的信任。認真對待每一個清潔任務，力求完美，超越客戶的期望。保持實在的作風，提供高品質但價格合理的服務。善待我們的員工，營造積極、友好的工作環境，激勵他們為客戶提供卓越服務。</p>
+        <p>提供可靠的清潔服務，以誠實守信的態度贏得客戶的信任。認真對待每一個清潔任務，力求完美，超越客戶的期望。保持實在的作風，提供高品質但價格合理的服務。善待我們的員工，營造積極、友好的工作環境，激勵他們為客戶提供卓越服務。
+        </p>
 
         <h2>核心價值觀</h2>
         <div class="values-grid">
@@ -401,6 +538,62 @@
     <footer>
         <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        let autoSlideInterval;
+        let manualControl = false;
+
+        showSlides(slideIndex);
+
+        autoSlideInterval = setInterval(() => {
+            if (!manualControl) {
+                slideIndex++;
+                showSlides(slideIndex);
+            }
+        }, 2500);
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n >= slides.length) { slideIndex = 0; }
+            else if (n < 0) { slideIndex = slides.length - 1; }
+            else { slideIndex = n; }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].className += " active";
+        }
+
+        function currentSlide(n) {
+            manualControl = true;
+            clearInterval(autoSlideInterval);
+            showSlides(n);
+        }
+
+        let dots = document.getElementsByClassName("dot");
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].addEventListener("mouseover", function () {
+                currentSlide(i);
+            });
+        }
+
+        function plusSlides(n) {
+            manualControl = true;
+            clearInterval(autoSlideInterval);
+            showSlides(slideIndex += n);
+        }
+    </script>
+
+
 </body>
 
 </html>
