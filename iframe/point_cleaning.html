@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,19 +24,104 @@
             font-size: 28px;
             color: #333;
             margin-top: 0;
+            text-align: center;
         }
 
         .content p {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .service-section h3 {
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: rgb(186, 255, 186);
+            text-align: center;
+        }
+
+        .btn-animate {
+            position: relative;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            border-radius: 5px;
+            background: #027efb;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-animate__sweep-left {
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                z-index: -1;
+                border-radius: 5px;
+                background-color: #90cf5b;
+                transition: .3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-animate a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
+
 <body>
     <div class="content">
-        <h2>駐點清潔 - 詳細內容</h2>
-        <p>這裡是駐點清潔的詳細內容...</p>
-        <!-- Add more detailed content here -->
+        <h2>服務內容</h2>
+        <div class="service-section">
+            <h3>駐點清潔</h3>
+        </div>
+        <p>我們的駐點清潔服務旨在為各類型的辦公空間、商業場所及住宅社區提供穩定、持續的清潔支持。無論是日常保養還是定期深層清潔，我們的專業清潔團隊都能駐點為您服務，確保環境整潔、衛生，營造舒適的工作與生活氛圍。</p>
+
+        <h3>服務內容</h3>
+        <ul>
+            <li><strong>日常清潔維護</strong>：提供日常辦公區域、公共空間、衛生間等的清潔維護，保證每個角落的清潔衛生。</li>
+            <li><strong>垃圾清理與分類</strong>：根據客戶需求定時收集和清理垃圾，並按照當地規定進行分類處理，確保環境整潔與環保。</li>
+            <li><strong>補充清潔用品</strong>：定期檢查並補充各類清潔用品（如衛生紙、洗手液、垃圾袋等），保障場所清潔維護的持續性。</li>
+            <li><strong>消毒與除菌</strong>：針對公共接觸頻繁的區域（如門把手、電梯按鈕等）進行定期消毒，減少細菌和病毒的傳播風險。</li>
+            <li><strong>靈活的服務方案</strong>：根據客戶的空間特性和需求，提供每日、每週或每月的清潔計劃，量身定制最適合的清潔方案。</li>
+        </ul>
+
+        <div class="btn-container" style="display: flex; justify-content: center; margin-top: 10px;">
+            <div class="btn-animate btn-animate__sweep-left" style="padding-left: 5px; padding-right: 5px;">
+                <a href="../contact.html" target="_top">聯絡我們進行洽詢</a>
+            </div>
+        </div>
+
     </div>
+
 </body>
+
 </html>
