@@ -329,7 +329,7 @@
             <button type="submit">提交</button>
             <span id="transportation-error" style="color: red; display: none;"><strong>請選擇至少一種交通工具。</strong></span>
             <span id="loading-message" style="display: none; margin-left: 10px;">表單提交中，請稍後...</span>
-            <p id="response-message" style="color: green; display: none;">申請已成功提交！</p>
+            <p id="response-message" style="color: green; display: none;">表單已成功提交！</p>
         </form>
 
     </div>
@@ -409,7 +409,13 @@
 
             const form = document.getElementById('contact-form');
             const formData = new FormData(form);
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzUbZli6hYZBhCY_azjBjs9Q8UrZsP9O7FavVZ6uCnKr37WTWYP5VFqDN9WY8ptTvvqJw/exec';
+
+            const transportationCheckboxes = document.querySelectorAll('input[name="transportation"]:checked');
+            const selectedTransportations = Array.from(transportationCheckboxes).map(cb => cb.value).join(', ');
+
+            formData.set('transportation', selectedTransportations);
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzUbZli6hYZBhCY_azjBjs9Q8UrZsP9O7FavVZ6uCnKr37WTWYP5VFqDN9WY8ptTvvqJw/exec'; // 替換為您的 Google Apps Script 網頁應用程式 URL
 
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => response.text())
