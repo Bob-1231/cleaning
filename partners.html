@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -163,43 +164,63 @@
             margin-bottom: 20px;
         }
 
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
         .form-group {
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 18px;
-            color: #555;
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 80px;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
+        input,
+        select {
+            flex-grow: 1;
+            padding: 8px;
+            margin-top: 0;
+            border: 1px solid #ddd;
             border-radius: 4px;
+            transition: border-color 0.3s ease;
             box-sizing: border-box;
         }
 
-        .form-group textarea {
-            resize: vertical;
+        .checkbox-group,
+        .form-group div {
+            display: flex;
+            gap: 20px;
+            margin-top: 0;
         }
 
-        .form-group button {
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
             padding: 10px 20px;
-            font-size: 18px;
-            background-color: #333;
-            color: #fff;
             border: none;
             border-radius: 4px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
-        .form-group button:hover {
-            background-color: #555;
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #loading-message {
+            font-weight: bold;
+            color: #007bff;
         }
 
         footer {
@@ -208,9 +229,9 @@
             text-align: center;
             color: white;
         }
-
     </style>
 </head>
+
 <body>
 
     <div class="navbar">
@@ -237,7 +258,7 @@
     <div class="hero">
         <h2>誠徵夥伴</h2>
     </div>
-    
+
     <div class="content">
         <h2>加入我們</h2>
 
@@ -246,35 +267,164 @@
             <strong>員工關懷：重視員工福利和職業發展，為他們提供支持和培訓，確保服務質量和員工滿意度。</strong>
         </p>
 
-        <form>
+        <form id="contact-form" onsubmit="sendEmail(event)">
+            <p><strong>"◆"符號為必填選項</strong></p>
             <div class="form-group">
-                <label for="name">姓名</label>
+                <label for="name">◆ 姓名</label>
                 <input type="text" id="name" name="name" required>
             </div>
 
             <div class="form-group">
-                <label for="email">電子郵件</label>
-                <input type="email" id="email" name="email" required>
+                <label>◆ 性別</label>
+                <div>
+                    <label><input type="radio" name="gender" value="男" required>男</label>
+                    <label><input type="radio" name="gender" value="女">女</label>
+                </div>
             </div>
-            
+
             <div class="form-group">
-                <label for="phone">電話</label>
+                <label for="phone">◆ 聯絡電話</label>
                 <input type="tel" id="phone" name="phone" required>
             </div>
 
             <div class="form-group">
-                <label for="resume">履歷</label>
-                <textarea id="resume" name="resume" rows="5" required></textarea>
+                <label for="email">電子信箱</label>
+                <input type="email" id="email" name="email">
             </div>
 
             <div class="form-group">
-                <button type="submit">提交</button>
+                <label for="line_id">LINE ID</label>
+                <input type="text" id="line_id" name="line_id">
             </div>
+
+            <div class="form-group">
+                <label for="birthdate">◆ 生日</label>
+                <div>
+                    <select id="birth-year" name="birth-year" required>
+                        <option value="">年</option>
+                    </select>
+                    <select id="birth-month" name="birth-month" required>
+                        <option value="">月</option>
+                    </select>
+                    <select id="birth-day" name="birth-day" required>
+                        <option value="">日</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">◆ 居住地址</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label>◆ 交通工具</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="transportation" value="機車">機車</label>
+                    <label><input type="checkbox" name="transportation" value="汽車">汽車</label>
+                    <label><input type="checkbox" name="transportation" value="大眾運輸">大眾運輸工具</label>
+                </div>
+            </div>
+
+            <button type="submit">提交</button>
+            <span id="transportation-error" style="color: red; display: none;"><strong>請選擇至少一種交通工具。</strong></span>
+            <span id="loading-message" style="display: none; margin-left: 10px;">表單提交中，請稍後...</span>
+            <p id="response-message" style="color: green; display: none;">申請已成功提交！</p>
         </form>
+
     </div>
-    
+
     <footer>
         <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        const yearSelect = document.getElementById('birth-year');
+        for (let year = 1900; year <= currentYear; year++) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+
+        const monthSelect = document.getElementById('birth-month');
+        for (let month = 1; month <= 12; month++) {
+            const option = document.createElement('option');
+            option.value = month;
+            option.textContent = month;
+            monthSelect.appendChild(option);
+        }
+
+        function updateDays() {
+            const year = parseInt(yearSelect.value);
+            const month = parseInt(monthSelect.value);
+            const daySelect = document.getElementById('birth-day');
+
+            daySelect.innerHTML = '<option value="">日</option>';
+
+            if (!isNaN(year) && !isNaN(month)) {
+                const daysInMonth = new Date(year, month, 0).getDate();
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const option = document.createElement('option');
+                    option.value = day;
+                    option.textContent = day;
+                    daySelect.appendChild(option);
+                }
+            }
+        }
+
+        yearSelect.addEventListener('change', updateDays);
+        monthSelect.addEventListener('change', updateDays);
+
+        function validateForm() {
+            const checkboxes = document.querySelectorAll('input[name="transportation"]');
+            const errorSpan = document.getElementById('transportation-error');
+            let isChecked = false;
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+
+            if (!isChecked) {
+                errorSpan.style.display = 'block';
+                return false;
+            } else {
+                errorSpan.style.display = 'none';
+                return true;
+            }
+        }
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            document.getElementById('loading-message').style.display = 'inline';
+
+            const form = document.getElementById('contact-form');
+            const formData = new FormData(form);
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzUbZli6hYZBhCY_azjBjs9Q8UrZsP9O7FavVZ6uCnKr37WTWYP5VFqDN9WY8ptTvvqJw/exec';
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('loading-message').style.display = 'none';
+                    document.getElementById('response-message').style.display = 'block';
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('錯誤!', error.message);
+                    document.getElementById('loading-message').style.display = 'none';
+                });
+        }
+    </script>
+
 </body>
+
 </html>
