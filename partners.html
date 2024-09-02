@@ -279,17 +279,27 @@
     </footer>
 
     <script>
+        function scrollToPercentage(percentage) {
+            const scrollPosition = document.documentElement.scrollHeight * (percentage / 100);
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             const formContainer = document.getElementById('google-form-container');
             const iframe = formContainer.querySelector('iframe');
 
             iframe.onload = function () {
                 setTimeout(function () {
-                    formContainer.scrollIntoView({ behavior: 'smooth' });
+                    scrollToPercentage(8);
                 }, 100);
             };
         });
     </script>
+
 </body>
 
 </html>
