@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #333;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .service-section h3 {
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: rgb(186, 255, 186);
+            text-align: center;
+        }
+
+        .photos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .photos img {
+            max-width: 30%;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-animate {
+            position: relative;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            border-radius: 5px;
+            background: #027efb;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-animate__sweep-left {
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 100%;
+                z-index: -1;
+                border-radius: 5px;
+                background-color: #90cf5b;
+                transition: .3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        .btn-animate a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h2>服務內容</h2>
+
+        <div class="service-section">
+            <h3>屋瓦修繕</h3>
+        </div>
+
+        <p>專門針對屋瓦的修繕與維護，保障您的建築安全與美觀。</p>
+
+        <h3>附加展示</h3>
+        <div class="photos">
+            <img src="..\media\roof\1.jpg" alt="高空作業照片1">
+            <img src="..\media\roof\2.jpg" alt="高空作業照片2">
+            <img src="..\media\roof\3.jpg" alt="高空作業照片3">
+        </div>
+
+        <div class="btn-container" style="display: flex; justify-content: center; margin-top: 10px;">
+            <div class="btn-animate btn-animate__sweep-left" style="padding-left: 5px; padding-right: 5px;">
+                <a href="../contact.html" target="_top">聯絡我們進行洽詢</a>
+            </div>
+        </div>
+
+        <div class="service-section">
+            <h3>外牆清洗</h3>
+        </div>
+
+        <p>外牆清洗是維護建築物外觀與結構完整性的重要服務。我們團隊擁有高空作業經驗和設備，能夠有效地去除外牆上的灰塵、污漬、黴菌和其他污染物，讓建築物恢復潔淨美觀。</p>
+
+        <ul>
+            <li><strong>安全可靠</strong>：我們使用符合標準的安全設備，確保每一次清洗作業的安全無虞。</li>
+            <li><strong>高效清潔</strong>：採用環保的清潔劑和高壓水柱技術，有效去除外牆各種頑固污垢。</li>
+            <li><strong>延長建築壽命</strong>：定期清洗不僅能保持建築物外觀整潔，還能防止污垢對牆體材質的侵蝕，延長建築物的使用壽命。</li>
+        </ul>
+
+        <p>無論是辦公大樓還是住宅區，皆能提供量身定制的外牆清洗方案，滿足您的各種需求。</p>
+
+        <div class="btn-container" style="display: flex; justify-content: center; margin-top: 10px;">
+            <div class="btn-animate btn-animate__sweep-left" style="padding-left: 5px; padding-right: 5px;">
+                <a href="../contact.html" target="_top">聯絡我們進行洽詢</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
