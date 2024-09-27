@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>錸潔 LAIJIE Home Cleaning</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            margin-right: 400px;
+        }
+
+        .navbar img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .navbar h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 0;
+            border-radius: 5px;
+            list-style-type: none;
+            margin: 0;
+            min-width: 100%;
+        }
+
+        .navbar ul li:hover ul {
+            display: block;
+            width: 80%;
+        }
+
+        .navbar ul li ul li {
+            width: 100%;
+            transform: translateX(-20px);
+        }
+
+        .navbar ul li ul li a {
+            height: auto;
+            padding: 10px;
+            white-space: nowrap;
+            display: block;
+            background-color: transparent;
+            text-align: center;
+        }
+
+        .navbar ul li ul li a:hover {
+            background-color: #575757;
+        }
+
+        .navbar ul li a.highlight {
+            background-color: #1ca1bf;
+            color: #fffb00;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .navbar ul li a.highlight:hover {
+            background-color: #29c529;
+        }
+
+        .hero {
+            background-image: url('./media/reservation.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin: 0;
+            z-index: 2;
+        }
+
+        .reservation-navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(186, 255, 186);
+            padding: 10px 0;
+            width: 100%;
+            z-index: 999;
+            position: relative;
+        }
+
+        .reservation-navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .reservation-navbar ul li {
+            margin: 0 15px;
+        }
+
+        .reservation-navbar ul li a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+            display: block;
+            font-size: large;
+        }
+
+        .reservation-navbar ul li a:hover {
+            background-color: #42a9e9;
+        }
+
+        .notice {
+            text-align: center;
+            background-color: #fffae6;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .notice a {
+            color: #ff3542;
+        }
+
+        footer {
+            background-color: #777;
+            padding: 3px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="./media/logo.jpg" alt="Logo">
+            <h1><a href="./index.html">錸潔 LAIJIE Home Cleaning</a></h1>
+        </div>
+
+        <div class="navbar-list">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li>
+                    <a href="./services.html">服務內容</a>
+                    <ul>
+                        <li><a href="./services/faq.html">常見問題</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./partners.html">誠徵夥伴</a>
+                </li>
+                <li><a href="./contact.html">聯絡我們</a></li>
+                <li><strong><a href="reservation.html" class="highlight">前往預約</a></strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>預約服務</h2>
+    </div>
+
+    <div class="reservation-navbar">
+        <ul>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSctoasBxzEdmLKUUjRP51IGK4eV8-CAA9oN39LgyUhzfnkR8w/viewform?embedded=true">居家清潔</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLScRdc_K3a2PNYa049m6W6QUkOKPYVcdULqj-Qb1dmOyYpaOsw/viewform?embedded=true">辦公室清潔</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSdRfmfvw7YQDK_USD0vSMimUJu11xy4-bEewAY7S8Vbqr-U6Q/viewform?embedded=true">裝潢細清</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSenymUOUAcsQ3LhG9KmFZq7qfcfUj49sJ0MnK8v93THESAWoA/viewform?embedded=true">電器清潔</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSeX8QYVWwRq3HLTc83aLxDEIX4WB1lc8p9vMNiCg4sbM4GsNA/viewform?embedded=true">傢俱清潔</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSc49xllnXKm1gWwujpDmtM_KZim6nR9FnPwjKVC0zKTjzt8IQ/viewform?embedded=true">整理收納</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSdIk35dcO2DqMSfF2eS7ZBipnfIiO-KKsBd595PGnrWtpag1Q/viewform?embedded=true">傾倒垃圾</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLScsXuZWf6PTbE5VRHixOHfmmjPEtqcl6xgl2dMhio4kpAkWiA/viewform?embedded=true">油漆工程</a></strong>
+            </li>
+            <li><strong><a href="#"
+                        data-src="https://docs.google.com/forms/d/e/1FAIpQLSfhhm3so5ob4mDKv9w9FIeBBm6A3PNm8fx4VtTps5pRCfiuJA/viewform?embedded=true">高空作業</a></strong>
+            </li>
+        </ul>
+    </div>
+
+    <div class="notice">
+        <p>填寫預約表單之前，請先確認預約類別正確，感謝！</p>
+        <p>若有任何問題請<a href="contact.html">聯絡我們</a></p>
+    </div>
+
+    <div class="reservation-content" id="google-form-container">
+    </div>
+
+    <footer>
+        <p>© 2024. LAIJIEclean. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToPercentage(percentage) {
+            const scrollPosition = document.documentElement.scrollHeight * (percentage / 100);
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const reservationLinks = document.querySelectorAll('.reservation-navbar a');
+            const reservationContent = document.querySelector('.reservation-content');
+
+            function loadForm(formSrc) {
+                reservationContent.innerHTML = `<iframe src="${formSrc}" width="100%" height="3400px" frameborder="0" marginheight="0" marginwidth="0"></iframe>`;
+                const iframe = reservationContent.querySelector('iframe');
+
+                iframe.onload = function () {
+                    setTimeout(function () {
+                        scrollToPercentage(6);
+                    }, 100);
+                };
+            }
+
+            reservationLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const formSrc = this.getAttribute('data-src');
+                    loadForm(formSrc);
+                });
+            });
+
+            if (reservationLinks.length > 0) {
+                const firstFormSrc = reservationLinks[0].getAttribute('data-src');
+                loadForm(firstFormSrc);
+            }
+        });
+    </script>
+</body>
+
+</html>
